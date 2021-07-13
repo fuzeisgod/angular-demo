@@ -1,2 +1,17 @@
 <app-header></app-header>
 <p>新闻组件{{ title }}</p>
+
+<div [title]="title">我是一个div</div>
+
+
+<div>{{ content }}</div>
+
+<span [innerHTML]="content"></span>
+
+<ul>
+    <li *ngFor="let item of arr">
+        {{ item }}
+    </li>
+</ul>
+
+<hr />
