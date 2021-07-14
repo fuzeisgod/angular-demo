@@ -1,0 +1,27 @@
+h2 {
+  text-align: center;
+}
+
+.people_list {
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #eee;
+//   text-align: center;
+
+  li{
+      min-height: 50px;
+      line-height: 50px;
+
+      .form_input {
+          width: 300px;
+          height: 30px;
+      }
+  }
+
+  .submit {
+      width: 400px;
+      height: 40px;
+      margin-top: 50px;
+  }
+}

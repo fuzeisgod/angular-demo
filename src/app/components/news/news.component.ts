@@ -19,6 +19,8 @@ export class NewsComponent implements OnInit {
 
   public arr = ['111', '222', '333']
 
+  public keywords: string = ""
+
   constructor() {
     // 改变属性的值
     this.title = " 改变后的news"
