@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../../services/storage.service'
 
 @Component({
   selector: 'app-todolist',
@@ -10,9 +11,13 @@ export class TodolistComponent implements OnInit {
 
   public todoList: any[] = []
 
-  constructor() { }
+  constructor(public storage: StorageService) {
+
+  }
 
   ngOnInit(): void {
+    console.log(this.storage.get('todolist'))
+    this.todoList = this.storage.get('todolist') || []
   }
 
   doAdd(e: any): void {
@@ -22,12 +27,18 @@ export class TodolistComponent implements OnInit {
           title: this.keyword,
           status: false // false 待办, true 完成
         })
+        this.keyword = ''
+        this.storage.set('todolist', this.todoList)
+      } else {
+        alert('数据已存在')
+        this.keyword = ''
       }
     }
   }
 
   deleteData(key: number): void {
     this.todoList.splice(key, 1)
+    this.storage.set('todolist', this.todoList)
   }
 
   todolistHasKeyword(todolist: any[], keyword: string): boolean {
@@ -37,6 +48,10 @@ export class TodolistComponent implements OnInit {
       }
     }
     return false
+  }
+
+  checkboxChange() {
+    this.storage.set('todolist', this.todoList)
   }
 
 }

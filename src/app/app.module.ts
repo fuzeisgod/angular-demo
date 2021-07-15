@@ -16,11 +16,16 @@ import { NewsComponent } from './components/news/news.component';
 import { FormComponent } from './components/form/form.component';
 import { SearchComponent } from './components/search/search.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
+import { HomeComponent } from './components/home/home.component';
+import { Home2Component } from './components/home2/home2.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ParentComponentComponent } from './components/parent-component/parent-component.component';
+import { ChildComponentComponent } from './components/child-component/child-component.component';
 
 // @NgModule 装饰器，接收一个元数据对象，告诉angular如何编译和启动应用
 @NgModule({
   declarations: [ /**配置当前项目运行的组件 */
-    AppComponent, NewsComponent, FormComponent, SearchComponent, TodolistComponent
+    AppComponent, NewsComponent, FormComponent, SearchComponent, TodolistComponent, HomeComponent, Home2Component, HeaderComponent, ParentComponentComponent, ChildComponentComponent
   ],
   imports: [ /**配置当前模块运行依赖的其他模块 */
     BrowserModule,

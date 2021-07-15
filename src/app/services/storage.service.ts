@@ -7,7 +7,16 @@ export class StorageService {
 
   constructor() { }
 
-  get() {
-    return 'this is a service'
+  set(key: string, value: any) {
+    localStorage.setItem(key, JSON.stringify(value))
+  }
+
+  get(key: string) {
+    let value: string = localStorage.getItem(key) || '[]'
+    return JSON.parse(value)
+  }
+
+  remove(key: string) {
+    localStorage.removeItem(key)
   }
 }
